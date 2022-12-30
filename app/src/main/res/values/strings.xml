@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Tabela Fipe</string>
+    <string-array name="tipos_veiculo">
+        <item>Carro</item>
+        <item>Moto</item>
+        <item>Caminhão</item>
+    </string-array>
+</resources>
