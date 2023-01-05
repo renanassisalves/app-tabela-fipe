@@ -22,7 +22,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:text="Selecione a marca do seu veículo"
+        android:text="Selecione o modelo do seu veículo"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold" />

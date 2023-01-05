@@ -3,7 +3,6 @@ package com.geardevelopmentbrazil.tabelafipe.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.*
 import com.geardevelopmentbrazil.tabelafipe.R
@@ -69,7 +68,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onResponse(call: Call<List<Marca>>, response: Response<List<Marca>>) {
-                    val intent = Intent(applicationContext, Listagem::class.java)
+                    val intent = Intent(applicationContext, ListagemMarca::class.java)
                     intent.putExtra("MARCAS", response.body() as Serializable)
                     startActivity(intent)
                 }

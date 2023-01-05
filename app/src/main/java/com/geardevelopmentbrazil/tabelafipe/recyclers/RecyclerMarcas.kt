@@ -10,6 +10,8 @@ import com.geardevelopmentbrazil.tabelafipe.models.Marca
 
 class RecyclerMarcas(private val listaMarcas: List<Marca>) :
     RecyclerView.Adapter<RecyclerMarcas.ViewHolder>() {
+    var listaAtual: List<Marca> = listaMarcas
+
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textViewMarca: TextView
         init {
@@ -23,11 +25,23 @@ class RecyclerMarcas(private val listaMarcas: List<Marca>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.textViewMarca.text = this.listaMarcas[position].retornarMarca()
+        holder.textViewMarca.text = this.listaAtual[position].retornarMarca()
     }
 
     override fun getItemCount(): Int {
-        return listaMarcas.size
+        return listaAtual.size
+    }
+
+    fun pesquisarLista(pesquisa: String) {
+        listaAtual = listaMarcas.filter {
+            it.retornarMarca().contains(pesquisa, true)
+        }
+        notifyDataSetChanged()
+    }
+
+    fun redefinirLista() {
+        listaAtual = listaMarcas
+        notifyDataSetChanged()
     }
 
 }
