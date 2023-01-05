@@ -1,17 +1,20 @@
 package com.geardevelopmentbrazil.tabelafipe.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Spinner
+import android.widget.*
 import com.geardevelopmentbrazil.tabelafipe.R
 import com.geardevelopmentbrazil.tabelafipe.endpoints.FipeService
+import com.geardevelopmentbrazil.tabelafipe.models.Marca
 import com.geardevelopmentbrazil.tabelafipe.models.Utils
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import retrofit2.Retrofit
+import java.io.Serializable
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         val btnConsultar: Button = findViewById(R.id.btnConsultar)
         val retrofit: Retrofit = Utils().getRetrofitInstance()
         val service = retrofit.create(FipeService::class.java)
-        var tipoSelecionado: String = "Carro"
+        var tipoSelecionado: String = "carros"
 
         ArrayAdapter.createFromResource(
             this,
@@ -54,8 +57,23 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnConsultar.setOnClickListener {
-           Log.v("Spinner", tipoSelecionado)
-        }
+            val callback = service.listarMarcas(tipoSelecionado)
 
+            callback.enqueue(object : Callback<List<Marca>> {
+                override fun onFailure(call: Call<List<Marca>>, t: Throwable) {
+                    Toast.makeText(
+                        baseContext,
+                        "Erro ao efetuar consulta, tente novamente ou verifique sua internet",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+                override fun onResponse(call: Call<List<Marca>>, response: Response<List<Marca>>) {
+                    val intent = Intent(applicationContext, Listagem::class.java)
+                    intent.putExtra("MARCAS", response.body() as Serializable)
+                    startActivity(intent)
+                }
+            })
+        }
     }
 }

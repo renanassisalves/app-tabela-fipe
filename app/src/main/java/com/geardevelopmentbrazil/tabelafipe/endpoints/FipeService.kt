@@ -8,7 +8,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface FipeService {
-    @GET("{tipo}/marcas/")
+    @GET("{tipo}/marcas")
     open fun listarMarcas(@Path("tipo") tipo: String) : Call<List<Marca>>
 
     @GET("{tipo}/marcas/{codigoMarca}/modelos")

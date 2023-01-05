@@ -10,9 +10,9 @@ class Utils {
 
     private fun getOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
-            .connectTimeout(300, TimeUnit.MINUTES)
-            .readTimeout(300, TimeUnit.SECONDS)
-            .writeTimeout(300, TimeUnit.SECONDS)
+            .connectTimeout(1, TimeUnit.MINUTES)
+            .readTimeout(10, TimeUnit.SECONDS)
+            .writeTimeout(10, TimeUnit.SECONDS)
             .build()
     }
 
