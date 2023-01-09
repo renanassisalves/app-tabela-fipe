@@ -1,5 +1,7 @@
 package com.geardevelopmentbrazil.tabelafipe.models
 
+import android.content.Context
+import android.widget.Toast
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -16,11 +18,19 @@ class Utils {
             .build()
     }
 
-    fun getRetrofitInstance() : Retrofit {
+    fun getRetrofitInstance(): Retrofit {
         return Retrofit.Builder()
             .baseUrl(url)
             .addConverterFactory(GsonConverterFactory.create())
             .client(getOkHttpClient())
             .build()
+    }
+
+    fun exibirErroConexao(context: Context) {
+        Toast.makeText(
+            context,
+            "Erro ao efetuar consulta, tente novamente ou verifique sua internet",
+            Toast.LENGTH_SHORT
+        ).show()
     }
 }

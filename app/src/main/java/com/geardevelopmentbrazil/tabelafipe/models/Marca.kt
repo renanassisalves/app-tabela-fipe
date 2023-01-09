@@ -11,4 +11,8 @@ class Marca (
     fun retornarMarca(): String{
         return this.nome
     }
+
+    fun retornarCodigo(): Int {
+        return this.codigo
+    }
 }

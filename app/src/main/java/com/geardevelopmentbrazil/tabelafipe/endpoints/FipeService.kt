@@ -9,14 +9,14 @@ import retrofit2.http.Path
 
 interface FipeService {
     @GET("{tipo}/marcas")
-    open fun listarMarcas(@Path("tipo") tipo: String) : Call<List<Marca>>
+    open fun getMarcas(@Path("tipo") tipo: String) : Call<List<Marca>>
 
     @GET("{tipo}/marcas/{codigoMarca}/modelos")
-    open fun listarModelos(@Path("tipo") tipo: String,
-                           @Path("codigoMarca") codigoMarca: Int) : Call<JsonObject>
+    open fun getModelos(@Path("tipo") tipo: String,
+                        @Path("codigoMarca") codigoMarca: Int) : Call<JsonObject>
 
     @GET("{tipo}/marcas/{codigoMarca}/modelos/{codigoModelo}/anos")
-    open fun listarAnos(@Path("tipo") tipo: String,
-                        @Path("codigoMarca") codigoMarca: Int,
-                        @Path("codigoModelo") codigoModelo: Int) : Call<Veiculo>
+    open fun getAnos(@Path("tipo") tipo: String,
+                     @Path("codigoMarca") codigoMarca: Int,
+                     @Path("codigoModelo") codigoModelo: Int) : Call<Veiculo>
 }

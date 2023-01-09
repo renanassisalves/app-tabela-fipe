@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnConsultar.setOnClickListener {
-            val callback = service.listarMarcas(tipoSelecionado)
+            val callback = service.getMarcas(tipoSelecionado)
 
             callback.enqueue(object : Callback<List<Marca>> {
                 override fun onFailure(call: Call<List<Marca>>, t: Throwable) {

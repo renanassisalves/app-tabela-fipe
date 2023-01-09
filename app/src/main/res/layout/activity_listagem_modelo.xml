@@ -5,13 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.ListagemMarca">
-
     <Toolbar
         android:id="@+id/toolbarListagem"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="#00058C" />
-
     <TextView
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
@@ -26,7 +24,6 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold" />
-
     <SearchView
         android:id="@+id/pesquisar"
         android:layout_width="match_parent"
@@ -38,7 +35,6 @@
         android:layout_marginBottom="5dp"
         android:iconifiedByDefault="false"
         android:queryHint="Pesquisar a marca..." />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_listagem"
         android:layout_width="match_parent"

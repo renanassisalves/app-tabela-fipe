@@ -7,18 +7,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.geardevelopmentbrazil.tabelafipe.R
 import com.geardevelopmentbrazil.tabelafipe.models.Marca
-import com.geardevelopmentbrazil.tabelafipe.recyclers.RecyclerMarcas
+import com.geardevelopmentbrazil.tabelafipe.adapters.AdapterMarca
 
 class ListagemMarca : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_listagem)
+        setContentView(R.layout.activity_listagem_marca)
 
         val listaObjetos = intent.extras?.get("MARCAS") as List<Marca>
-
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_listagem)
         val pesquisar = findViewById<SearchView>(R.id.pesquisar)
-        val adapter = RecyclerMarcas(listaObjetos)
+        val adapter = AdapterMarca(listaObjetos)
 
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -27,7 +26,7 @@ class ListagemMarca : AppCompatActivity() {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 if (query != null) {
                     adapter.pesquisarLista(query)
-                } else  {
+                } else {
                     adapter.redefinirLista()
                 }
                 return true
@@ -41,7 +40,6 @@ class ListagemMarca : AppCompatActivity() {
                 }
                 return true
             }
-
         })
     }
 }
