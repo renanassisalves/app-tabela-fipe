@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.*
 import com.geardevelopmentbrazil.tabelafipe.R
 import com.geardevelopmentbrazil.tabelafipe.endpoints.FipeService
+import com.geardevelopmentbrazil.tabelafipe.models.Auxiliar
 import com.geardevelopmentbrazil.tabelafipe.models.Marca
 import com.geardevelopmentbrazil.tabelafipe.models.Utils
 import retrofit2.Call
@@ -41,17 +42,18 @@ class MainActivity : AppCompatActivity() {
                 view: View?,
                 position: Int,
                 id: Long
-            ) {
+            )   {
                 tipoSelecionado = when(position) {
                     0 -> "carros"
                     1 -> "motos"
                     2 -> "caminhoes"
                     else -> "carros"
                 }
+                Auxiliar.setTipo(tipoSelecionado)
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
+                println()
             }
         }
 
@@ -68,7 +70,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onResponse(call: Call<List<Marca>>, response: Response<List<Marca>>) {
-                    val intent = Intent(applicationContext, ListagemMarca::class.java)
+                    val intent = Intent(applicationContext, ListagemMarcaActivity::class.java)
                     intent.putExtra("MARCAS", response.body() as Serializable)
                     startActivity(intent)
                 }

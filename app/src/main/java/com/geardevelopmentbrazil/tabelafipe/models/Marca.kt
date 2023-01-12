@@ -4,15 +4,13 @@ import java.io.Serializable
 
 class Marca (
     private val nome: String,
-    private val codigo: Int
-
-
+    private val codigo: String
 ) : Serializable {
     fun retornarMarca(): String{
         return this.nome
     }
 
-    fun retornarCodigo(): Int {
+    fun retornarCodigo(): String {
         return this.codigo
     }
 }

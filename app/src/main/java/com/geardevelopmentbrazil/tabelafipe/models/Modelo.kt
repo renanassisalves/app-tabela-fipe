@@ -2,13 +2,13 @@ package com.geardevelopmentbrazil.tabelafipe.models
 
 class Modelo (
     private val nome: String,
-    private val codigo: Int
+    private val codigo: String
 ) {
     fun retornarNome(): String {
         return this.nome
     }
 
-    fun retornarCodigo(): Int {
+    fun retornarCodigo(): String {
         return this.codigo
     }
 }

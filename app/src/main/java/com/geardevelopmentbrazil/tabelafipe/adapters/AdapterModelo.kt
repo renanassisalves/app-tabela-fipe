@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.geardevelopmentbrazil.tabelafipe.R
-import com.geardevelopmentbrazil.tabelafipe.activities.ListagemModelo
+import com.geardevelopmentbrazil.tabelafipe.activities.ListagemAnoActivity
+import com.geardevelopmentbrazil.tabelafipe.models.Auxiliar
 import com.geardevelopmentbrazil.tabelafipe.models.Modelo
 
 class AdapterModelo(private val listaModelos: List<Modelo>):
@@ -29,8 +30,8 @@ class AdapterModelo(private val listaModelos: List<Modelo>):
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.textViewModelo.text = this.listaAtual[position].retornarNome()
         holder.itemView.setOnClickListener {
-            val intent = Intent(holder.itemView.context, ListagemModelo::class.java)
-            intent.putExtra("Codigo", this.listaAtual[position].retornarCodigo())
+            val intent = Intent(holder.itemView.context, ListagemAnoActivity::class.java)
+            Auxiliar.setCodigoModelo(this.listaAtual[position].retornarCodigo())
             holder.itemView.context.startActivity(intent)
         }
     }

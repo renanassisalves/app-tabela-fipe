@@ -9,7 +9,7 @@ import com.geardevelopmentbrazil.tabelafipe.R
 import com.geardevelopmentbrazil.tabelafipe.models.Marca
 import com.geardevelopmentbrazil.tabelafipe.adapters.AdapterMarca
 
-class ListagemMarca : AppCompatActivity() {
+class ListagemMarcaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listagem_marca)
