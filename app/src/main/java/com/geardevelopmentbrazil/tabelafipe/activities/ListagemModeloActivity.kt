@@ -2,6 +2,8 @@ package com.geardevelopmentbrazil.tabelafipe.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.ProgressBar
 import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,8 +21,10 @@ import retrofit2.Retrofit
 
 class ListagemModeloActivity : AppCompatActivity() {
 
-    lateinit var listaMarcas: List<Modelo>
-    lateinit var listaAnos: List<Ano>
+    var listaMarcas: List<Modelo>? = null
+    var listaAnos: List<Ano>? = null
+
+    var progressBar: ProgressBar? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,8 +36,7 @@ class ListagemModeloActivity : AppCompatActivity() {
         val service = retrofit.create(FipeService::class.java)
         val callback = service.getModelos(tipoSelecionado, codigoMarca)
 
-        listaMarcas = List(0) {Modelo("", "")}
-        listaAnos = List(0) {Ano("", "")}
+        progressBar = findViewById(R.id.progressBarModelo)
 
         callback.enqueue(object : Callback<JsonObject> {
             override fun onFailure(call: Call<JsonObject>, t: Throwable) {
@@ -49,10 +52,12 @@ class ListagemModeloActivity : AppCompatActivity() {
                     listaMarcas = gson.fromJson(modelos, Array<Modelo>::class.java).toList()
                     listaAnos = gson.fromJson(anos, Array<Ano>::class.java).toList()
 
-                    inicializarRecyclerView(listaMarcas)
+                    inicializarRecyclerView(listaMarcas!!)
                 } else {
                     Utils().exibirErroConexao(applicationContext)
                 }
+
+                progressBar?.visibility = View.GONE
             }
         })
     }

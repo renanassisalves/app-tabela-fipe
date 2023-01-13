@@ -5,66 +5,241 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.VeiculoActivity">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_centerInParent="true"
-        android:background="@drawable/background_scroll_view">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_scroll_view"
+            android:layout_margin="10dp">
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/imagemTipoVeiculo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/carro" />
             <TextView
                 android:id="@+id/labelAnoModelo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
                 android:text="Ano do modelo:"
-                android:textStyle="bold"/>
+                android:layout_below="@id/imagemTipoVeiculo"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/anoModelo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/labelAnoModelo"
+                android:layout_below="@id/imagemTipoVeiculo"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="19sp" />
+
+            <TextView
+                android:id="@+id/labelCodigoFipe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/labelAnoModelo"
+                android:padding="5dp"
+                android:text="Código Fipe:"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/codigoFipe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/labelCodigoFipe"
+                android:layout_toRightOf="@id/labelCodigoFipe"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="19sp" />
+
             <TextView
                 android:id="@+id/labelCombustivel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/labelCodigoFipe"
+                android:padding="5dp"
                 android:text="Combustível:"
-                android:textStyle="bold"/>
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/combustivel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/labelCombustivel"
+                android:layout_toRightOf="@id/labelCombustivel"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="19sp" />
+
             <TextView
                 android:id="@+id/labelMarca"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/labelCombustivel"
+                android:padding="5dp"
                 android:text="Marca:"
-                android:textStyle="bold"/>
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/marca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/labelMarca"
+                android:layout_toRightOf="@id/labelMarca"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="19sp" />
+
             <TextView
                 android:id="@+id/labelMesReferencia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/labelMarca"
+                android:padding="5dp"
                 android:text="Mês de Referência:"
-                android:textStyle="bold"/>
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mesReferencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/labelMesReferencia"
+                android:layout_toRightOf="@id/labelMesReferencia"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="19sp" />
+
             <TextView
                 android:id="@+id/labelModelo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/labelMesReferencia"
+                android:padding="5dp"
                 android:text="Modelo:"
-                android:textStyle="bold"/>
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/modelo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/labelModelo"
+                android:layout_alignBottom="@id/labelModelo"
+                android:layout_toRightOf="@id/labelModelo"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="19sp" />
+
             <TextView
                 android:id="@+id/labelSiglaCombustivel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/labelModelo"
+                android:padding="5dp"
                 android:text="Sigla Combustível:"
-                android:textStyle="bold"/>
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/siglaCombustivel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/labelSiglaCombustivel"
+                android:layout_toRightOf="@id/labelSiglaCombustivel"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="19sp" />
+
             <TextView
                 android:id="@+id/labelTipoVeiculo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/labelSiglaCombustivel"
+                android:padding="5dp"
                 android:text="Marca:"
-                android:textStyle="bold"/>
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tipoVeiculo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/labelTipoVeiculo"
+                android:layout_toRightOf="@id/labelTipoVeiculo"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="19sp" />
+
             <TextView
                 android:id="@+id/labelValor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/labelTipoVeiculo"
+                android:padding="5dp"
                 android:text="Valor:"
-                android:textStyle="bold"/>
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/valor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/labelValor"
+                android:layout_toRightOf="@id/labelValor"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="19sp" />
+
+
         </RelativeLayout>
-    </ScrollView>
+        </ScrollView>
+        <ProgressBar
+            android:id="@+id/progressBarVeiculo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/scrollView"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"/>
+    </RelativeLayout>
 </RelativeLayout>

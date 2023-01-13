@@ -2,6 +2,8 @@ package com.geardevelopmentbrazil.tabelafipe.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.ProgressBar
 import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,6 +25,7 @@ import retrofit2.Retrofit
 class ListagemAnoActivity : AppCompatActivity() {
 
      var listaAnos: List<Ano>
+     var progressAno: ProgressBar? = null
 
     init {
         listaAnos = MutableList(0) {Ano("", "")}
@@ -32,6 +35,8 @@ class ListagemAnoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listagem_ano)
 
+
+        progressAno = findViewById(R.id.progressAno)
         val codigoMarca = Auxiliar.getCodigoMarca()
         val codigoModelo = Auxiliar.getCodigoModelo()
         val tipoSelecionado = Auxiliar.getTipo()
@@ -57,6 +62,9 @@ class ListagemAnoActivity : AppCompatActivity() {
                 } else {
                     Utils().exibirErroConexao(applicationContext)
                 }
+
+                progressAno?.visibility = View.GONE
+                println()
             }
         })
     }
