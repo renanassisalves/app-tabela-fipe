@@ -5,16 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.ListagemMarcaActivity">
-    <Toolbar
-        android:id="@+id/toolbarListagem"
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/bannerAnoSuperior"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="#00058C" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        ads:adSize="FULL_BANNER"
+        ads:adUnitId="@string/banner"/>
     <TextView
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbarListagem"
+        android:layout_below="@id/bannerAnoSuperior"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
@@ -39,6 +42,7 @@
         android:id="@+id/recycler_listagem"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@id/bannerAnoInferior"
         android:layout_below="@id/pesquisar"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
@@ -50,4 +54,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"/>
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/bannerAnoInferior"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        ads:adSize="FULL_BANNER"
+        ads:adUnitId="@string/banner"/>
 </RelativeLayout>

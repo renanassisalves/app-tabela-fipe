@@ -15,6 +15,8 @@ import com.geardevelopmentbrazil.tabelafipe.models.Ano
 import com.geardevelopmentbrazil.tabelafipe.models.Auxiliar
 import com.geardevelopmentbrazil.tabelafipe.models.Modelo
 import com.geardevelopmentbrazil.tabelafipe.models.Utils
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonArray
 import retrofit2.Call
@@ -35,6 +37,11 @@ class ListagemAnoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listagem_ano)
 
+        val bannerSuperior: AdView = findViewById(R.id.bannerAnoSuperior)
+        val bannerInferior: AdView = findViewById(R.id.bannerAnoInferior)
+        val adRequest = AdRequest.Builder().build()
+        bannerSuperior.loadAd(adRequest)
+        bannerInferior.loadAd(adRequest)
 
         progressAno = findViewById(R.id.progressAno)
         val codigoMarca = Auxiliar.getCodigoMarca()

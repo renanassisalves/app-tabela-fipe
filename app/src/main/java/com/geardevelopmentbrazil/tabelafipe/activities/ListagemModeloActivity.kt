@@ -11,6 +11,8 @@ import com.geardevelopmentbrazil.tabelafipe.R
 import com.geardevelopmentbrazil.tabelafipe.adapters.AdapterModelo
 import com.geardevelopmentbrazil.tabelafipe.endpoints.FipeService
 import com.geardevelopmentbrazil.tabelafipe.models.*
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
@@ -29,6 +31,12 @@ class ListagemModeloActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listagem_modelo)
+
+        val bannerSuperior: AdView = findViewById(R.id.bannerModeloSuperior)
+        val bannerInferior: AdView = findViewById(R.id.bannerModeloInferior)
+        val adRequest = AdRequest.Builder().build()
+        bannerSuperior.loadAd(adRequest)
+        bannerInferior.loadAd(adRequest)
 
         val codigoMarca = Auxiliar.getCodigoMarca()
         val tipoSelecionado = Auxiliar.getTipo()

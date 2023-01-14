@@ -10,6 +10,9 @@ import com.geardevelopmentbrazil.tabelafipe.endpoints.FipeService
 import com.geardevelopmentbrazil.tabelafipe.models.Auxiliar
 import com.geardevelopmentbrazil.tabelafipe.models.Marca
 import com.geardevelopmentbrazil.tabelafipe.models.Utils
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,6 +23,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        MobileAds.initialize(this) {}
+
+        val bannerSuperior: AdView = findViewById(R.id.bannerMainSuperior)
+        val bannerInferior: AdView = findViewById(R.id.bannerMainInferior)
+        val adRequest = AdRequest.Builder().build()
+        bannerSuperior.loadAd(adRequest)
+        bannerInferior.loadAd(adRequest)
 
         val spinner: Spinner = findViewById<Spinner>(R.id.spinnerTipo)
         val btnConsultar: Button = findViewById(R.id.btnConsultar)

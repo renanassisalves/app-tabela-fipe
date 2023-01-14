@@ -11,24 +11,39 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="#00058C" />
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/bannerMainSuperior"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        ads:adSize="FULL_BANNER"
+        ads:adUnitId="@string/banner"/>
     <TextView
         android:id="@+id/txtTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
+        android:layout_above="@id/labelTipo"
         android:layout_centerHorizontal="true"
-        android:layout_margin="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         android:text="Consulta Tabela Fipe 2023"
         android:textColor="@color/black"
         android:textSize="30sp" />
+
     <TextView
         android:id="@+id/labelTipo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="Selecione o tipo do veículo"
-        android:layout_below="@id/txtTitulo"
-        android:layout_centerHorizontal="true" />
+
+        android:layout_centerInParent="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="Selecione o tipo do veículo" />
     <Spinner
         android:id="@+id/spinnerTipo"
         android:layout_width="wrap_content"
@@ -45,5 +60,12 @@
         android:layout_centerHorizontal="true"
         android:text="Consultar"
         android:backgroundTint="#00058C"/>
-
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/bannerMainInferior"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        ads:adSize="FULL_BANNER"
+        ads:adUnitId="@string/banner"/>
 </RelativeLayout>

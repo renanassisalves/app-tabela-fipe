@@ -5,16 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.ListagemMarcaActivity">
-    <Toolbar
-        android:id="@+id/toolbarListagem"
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/bannerModeloSuperior"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="#00058C" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        ads:adSize="FULL_BANNER"
+        ads:adUnitId="@string/banner"/>
     <TextView
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbarListagem"
+        android:layout_below="@id/bannerModeloSuperior"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
@@ -44,6 +47,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
+        android:layout_above="@id/bannerModeloInferior"
         tools:listitem="@layout/item_marca" />
 
     <ProgressBar
@@ -51,4 +55,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true" />
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/bannerModeloInferior"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        ads:adSize="FULL_BANNER"
+        ads:adUnitId="@string/banner"/>
 </RelativeLayout>
