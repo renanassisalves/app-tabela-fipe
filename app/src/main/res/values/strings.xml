@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Tabela Fipe</string>
+    <string name="app_name">Tabela Fipe 2023</string>
     <string-array name="tipos_veiculo">
         <item>Carro</item>
         <item>Moto</item>

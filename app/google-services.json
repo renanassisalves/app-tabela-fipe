@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "930990413993",
+    "project_id": "tabela-fipe-2023",
+    "storage_bucket": "tabela-fipe-2023.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930990413993:android:061d20615b2784abbcf1b8",
+        "android_client_info": {
+          "package_name": "com.geardevelopmentbrazil.tabelafipe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "930990413993-vttcn4nc37pq5o11ij8hcnkmgbcn7hg1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAEDj0WAEJPdkYZH3k9l7x9L2Rzaq3Jd0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "930990413993-vttcn4nc37pq5o11ij8hcnkmgbcn7hg1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

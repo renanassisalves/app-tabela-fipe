@@ -26,6 +26,7 @@ class VeiculoActivity : AppCompatActivity() {
 
     var imagemTipo: ImageView? = null
 
+    var nomeVeiculo: TextView? = null
     var textAnoModelo: TextView? = null
     var textCodigoFipe: TextView? = null
     var textCombustivel: TextView? = null
@@ -54,6 +55,7 @@ class VeiculoActivity : AppCompatActivity() {
         bannerInferior.loadAd(adRequest)
 
         imagemTipo = findViewById(R.id.imagemTipoVeiculo)
+        nomeVeiculo = findViewById(R.id.nomeVeiculo)
         textAnoModelo = findViewById(R.id.anoModelo)
         textCodigoFipe = findViewById(R.id.codigoFipe)
         textCombustivel = findViewById(R.id.combustivel)
@@ -92,6 +94,7 @@ class VeiculoActivity : AppCompatActivity() {
                     val gson = GsonBuilder().create()
                     veiculo = gson.fromJson(jsonResultante, Veiculo::class.java)
 
+                    nomeVeiculo?.setText(veiculo?.Marca + " " + veiculo?.Modelo)
                     textAnoModelo?.setText(veiculo?.AnoModelo)
                     textCodigoFipe?.setText(veiculo?.CodigoFipe)
                     textCombustivel?.setText(veiculo?.Combustivel)
@@ -172,7 +175,7 @@ class VeiculoActivity : AppCompatActivity() {
                 "*\n Tipo: " + veiculo?.TipoVeiculo +
                 "\n Marca: " + veiculo?.Marca +
                 "\n Modelo: " + veiculo?.Modelo +
-                "\n Ano: " + veiculo?.AnoModelo
+                "\n Ano: " + veiculo?.AnoModelo +
                 "\n Combustível: " + veiculo?.Combustivel +
                 "\n Sigla Combustível: " + veiculo?.SiglaCombustivel
                 "\n Código Fipe: " + veiculo?.CodigoFipe +
