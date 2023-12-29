@@ -5,6 +5,13 @@
         <item>Moto</item>
         <item>Caminhão</item>
     </string-array>
-    
+
+
+<!--    Teste-->
+<!--    <string name="banner">ca-app-pub-3940256099942544/6300978111</string>-->
+<!--    <string name="interstitial">ca-app-pub-3940256099942544/1033173712</string>-->
+
+<!--    Produção -->
     <string name="banner">ca-app-pub-6712483420880088/5714386755</string>
+    <string name="interstitial">ca-app-pub-6712483420880088/9269958112</string>
 </resources>

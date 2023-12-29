@@ -3,6 +3,7 @@ package com.geardevelopmentbrazil.tabelafipe.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.*
 import com.geardevelopmentbrazil.tabelafipe.R
@@ -12,12 +13,15 @@ import com.geardevelopmentbrazil.tabelafipe.models.Marca
 import com.geardevelopmentbrazil.tabelafipe.models.Utils
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import java.io.Serializable
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

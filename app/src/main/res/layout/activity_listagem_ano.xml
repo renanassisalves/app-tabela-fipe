@@ -8,9 +8,10 @@
     <com.google.android.gms.ads.AdView
         android:id="@+id/bannerAnoSuperior"
         xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         ads:adSize="FULL_BANNER"
         ads:adUnitId="@string/banner"/>
     <TextView
@@ -49,16 +50,18 @@
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
         tools:listitem="@layout/item_marca" />
+
     <ProgressBar
         android:id="@+id/progressAno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true" />
     <com.google.android.gms.ads.AdView
         android:id="@+id/bannerAnoInferior"
         xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="FULL_BANNER"
         ads:adUnitId="@string/banner"/>

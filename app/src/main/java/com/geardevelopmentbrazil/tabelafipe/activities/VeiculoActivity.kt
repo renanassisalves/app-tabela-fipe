@@ -6,6 +6,8 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.util.Log
 import android.view.View
 import android.widget.*
 import com.geardevelopmentbrazil.tabelafipe.R
@@ -15,6 +17,9 @@ import com.geardevelopmentbrazil.tabelafipe.models.Utils
 import com.geardevelopmentbrazil.tabelafipe.models.Veiculo
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonObject
 import retrofit2.Call
@@ -44,6 +49,9 @@ class VeiculoActivity : AppCompatActivity() {
     var btnCopiar: Button? = null
     var btnCompartilhar: Button? = null
 
+    private var mInterstitialAd: InterstitialAd? = null
+    private final var TAG = "MainActivity"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_veiculo)
@@ -53,6 +61,22 @@ class VeiculoActivity : AppCompatActivity() {
         val adRequest = AdRequest.Builder().build()
         bannerSuperior.loadAd(adRequest)
         bannerInferior.loadAd(adRequest)
+
+        InterstitialAd.load(this, getString(R.string.interstitial), adRequest, object : InterstitialAdLoadCallback() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                Log.d(TAG, adError.toString())
+                mInterstitialAd = null
+            }
+
+            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                Log.d(TAG, "Ad was loaded.");
+                Handler().postDelayed({
+                    mInterstitialAd = interstitialAd;
+                    mInterstitialAd?.show(this@VeiculoActivity);
+                }, 5000)
+
+            }
+        })
 
         imagemTipo = findViewById(R.id.imagemTipoVeiculo)
         nomeVeiculo = findViewById(R.id.nomeVeiculo)

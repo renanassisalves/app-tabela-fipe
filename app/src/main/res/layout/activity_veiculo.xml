@@ -8,8 +8,9 @@
     <com.google.android.gms.ads.AdView
         android:id="@+id/bannerVeiculoSuperior"
         xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         ads:adSize="FULL_BANNER"
         ads:adUnitId="@string/banner"/>
@@ -284,18 +285,6 @@
             android:layout_centerHorizontal="true"
             android:text="Consultar novo veículo" />
     </RelativeLayout>
-
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/bannerVeiculoInferior"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        app:adSize="FULL_BANNER"
-        app:adUnitId="@string/banner" />
     <ProgressBar
         android:id="@+id/progressBarVeiculo"
         android:layout_width="wrap_content"
@@ -305,4 +294,16 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp" />
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/bannerVeiculoInferior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:adSize="FULL_BANNER"
+        app:adUnitId="@string/banner" />
 </RelativeLayout>

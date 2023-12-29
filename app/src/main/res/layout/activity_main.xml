@@ -14,9 +14,10 @@
     <com.google.android.gms.ads.AdView
         android:id="@+id/bannerMainSuperior"
         xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         ads:adSize="FULL_BANNER"
         ads:adUnitId="@string/banner"/>
     <TextView
@@ -63,8 +64,9 @@
     <com.google.android.gms.ads.AdView
         android:id="@+id/bannerMainInferior"
         xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="FULL_BANNER"
         ads:adUnitId="@string/banner"/>
